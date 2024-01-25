@@ -5,14 +5,15 @@ basic.forever(function () {
         images.iconImage(IconNames.SmallHeart).showImage(0)
         control.waitMicros(250000)
         images.iconImage(IconNames.Heart).showImage(0)
-        _4Digit.show(pins.analogReadPin(AnalogPin.P2))
+        _4Digit.show(pins.analogReadPin(AnalogPin.P1))
         control.waitMicros(250000)
-        if (pins.analogReadPin(AnalogPin.P2) < 150) {
+        if (pins.analogReadPin(AnalogPin.P1) < 150) {
             pins.digitalWritePin(DigitalPin.P0, 1)
         } else {
             pins.digitalWritePin(DigitalPin.P0, 0)
         }
     } else {
+        pins.digitalWritePin(DigitalPin.P0, 0)
         images.iconImage(IconNames.No).showImage(0)
     }
 })
